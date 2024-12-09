@@ -6,7 +6,7 @@ Data engineering project
 
 
 ## Architecture
-#### Arquitetura lambda
+### Arquitetura lambda
 
 A arquitetura lambda é um estilo de design de sistemas de processamento de dados que visa proporcionar uma solução robusta e eficiente para processar grandes volumes de dados em tempo real e em lote.
 
