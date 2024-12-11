@@ -117,6 +117,7 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
 
 
 ---
+<img src="./images/azure-kv.png" alt="drawing" width="50"/>
 
 - **Azure Key Vault**: Serviço de gerenciamento de segredos que armazena e controla o acesso a senhas, certificados, chaves de criptografia e outros segredos.
 
@@ -125,6 +126,7 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
         - Gerenciamento Centralizado: Oferece um local central para gerenciar chaves e segredos, simplificando a conformidade e segurança.
 
 ---
+<img src="./images/azure-purview.png" alt="drawing" width="50"/>
 
 - **Azure Purview**: Serviço de governança de dados que ajuda a descobrir, entender e gerenciar dados em toda a organização, garantindo conformidade e segurança.
 
@@ -133,6 +135,7 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
         - Governança e Conformidade: Ajuda a garantir que os dados estão em conformidade com regulamentos e políticas internas.
 
 ---
+<img src="./images/azure-cost.png" alt="drawing" width="50"/>
 
 - **Azure Cost Management**: Conjunto de ferramentas que ajudam as organizações a analisar, monitorar e otimizar os custos com o Microsoft Cloud. Oferece relatórios detalhados e alertas para ajudar a controlar os gastos.
 
@@ -141,6 +144,7 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
         - Otimização de recursos: Permite a alocação de custos entre diferentes unidades de negócios, projetos ou clientes, promovendo eficiência e responsabilidade.
 
 ---
+<img src="./images/azure-monitor.jpg" alt="drawing" width="50"/>
 
 - **Azure Monitor** : Solução de monitoramento que coleta, analisa e responde a dados de monitoramento de ambientes de nuvem e locais. Ajuda a maximizar a disponibilidade e o desempenho dos aplicativos e serviços.
 
