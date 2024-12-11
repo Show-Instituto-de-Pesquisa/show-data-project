@@ -64,7 +64,7 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
 ---
 
 ### Architecture Stack
-![architecture stack](./images/stack_architecture_toreview.png)
+![architecture stack](./images/stack_architecture.png)
 
 ### Soluções utilizadas
 ---
