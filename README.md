@@ -4,6 +4,15 @@ A violência contra a mulher é um problema grave que afeta diretamente a saúde
 ## Objetivo 
 Criar um MVP que possa ingerir dados públicos de violência contra a mulher no Estado de Minas Gerais, processá-los através das camadas de dados Bronze, Silver e Gold usando o Azure Data Factory para transformar esses dados e gerar insights valiosos para a formulação de políticas públicas e como a violência contra a mulher mudou ao longo dos anos. 
 
+## Atividades técnicas para o MVP
+
+1. Verificação dos arquivos brutos;
+2. Levantamento de requisitos;
+3. Definição e desenho da arquitetura;
+4. Preparação do ambiente;
+5. Desenvolvimento;
+6. Teste e validação.
+
 ## Project checklist
 
 
