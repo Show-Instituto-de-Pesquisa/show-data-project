@@ -15,6 +15,13 @@ Criar um MVP que possa ingerir dados públicos de violência contra a mulher no 
 
 ## Project checklist
 
+## Requisitos
+- Sistema resiliente;
+- Deve suportar ingestão de dados em batch e em streaming
+- As camadas de dados devem manter rastreabilidade e serem isoladas umas das outras
+- O projeto não deve ultrapassar X reais de custo com ferramentas
+- Deve-se ter uma camada de governança de custos, dados sensíveis e linhagem de dados
+- O projeto deve suportar o consumo de dados para Analytics
 
 ## Architecture
 ### Conceptual Architecture
