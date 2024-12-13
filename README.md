@@ -41,7 +41,7 @@ Criar um MVP que possa ingerir dados públicos de violência contra a mulher no 
 # Arquitetura
 
 ### Conceito Lambda
-![conceptual architecture](./images/conceptual_architecture.png)
+![conceptual architecture](./images/checklist_sample.png)
 
 ### O que é?
 A arquitetura lambda é um estilo de design de sistemas de processamento de dados que visa proporcionar uma solução robusta e eficiente para processar grandes volumes de dados em tempo real e em lote.
