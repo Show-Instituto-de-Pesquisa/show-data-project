@@ -33,7 +33,7 @@
 				"source(output(",
 				"          municipio_cod as string,",
 				"          municipio_fato as string,",
-				"          data_fato as date,",
+				"          data_fato as string,",
 				"          mes as integer,",
 				"          ano as integer,",
 				"          risp as string,",

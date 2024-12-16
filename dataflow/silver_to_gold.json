@@ -1,0 +1,25 @@
+{
+	"name": "silver_to_gold",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "teste_henrique",
+						"type": "DatasetReference"
+					},
+					"name": "srcsilver"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> srcsilver"
+			]
+		}
+	}
+}
