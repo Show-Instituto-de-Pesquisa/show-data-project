@@ -1,0 +1,47 @@
+{
+	"name": "etl_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "cp_bronze_silver",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "cp_bronze_silver",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "cp_agg_silver_gold",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "cp_bronze_silver",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "cp_agg_silver_gold",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": []
+	}
+}
