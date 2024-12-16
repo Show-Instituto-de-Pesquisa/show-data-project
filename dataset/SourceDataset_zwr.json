@@ -1,0 +1,69 @@
+{
+	"name": "SourceDataset_zwr",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Fonte_dados",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Bronze"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "violencia_domestica",
+				"container": "bronze"
+			},
+			"columnDelimiter": ";",
+			"rowDelimiter": "\n",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "municipio_cod",
+				"type": "String"
+			},
+			{
+				"name": "municipio_fato",
+				"type": "String"
+			},
+			{
+				"name": "data_fato",
+				"type": "String"
+			},
+			{
+				"name": "mes",
+				"type": "String"
+			},
+			{
+				"name": "ano",
+				"type": "String"
+			},
+			{
+				"name": "risp",
+				"type": "String"
+			},
+			{
+				"name": "rmbh",
+				"type": "String"
+			},
+			{
+				"name": "natureza_delito",
+				"type": "String"
+			},
+			{
+				"name": "tentado_consumado",
+				"type": "String"
+			},
+			{
+				"name": "qtde_vitimas",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

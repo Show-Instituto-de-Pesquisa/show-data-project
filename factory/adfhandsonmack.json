@@ -1,0 +1,9 @@
+{
+	"name": "adfhandsonmack",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "757e56ab-3f58-4644-a3ce-37db8385f2a1",
+		"tenantId": "8cc380fa-e963-4a3e-851f-50d530047344"
+	}
+}

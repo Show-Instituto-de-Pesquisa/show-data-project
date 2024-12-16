@@ -1,0 +1,32 @@
+{
+	"name": "Fonte_dados",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Fonte_dados",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Bronze"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "violencia_domestica",
+				"container": "bronze"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "municipio_cod;municipio_fato;data_fato;mes;ano;risp;rmbh;natureza_delito;tentado_consumado;qtde_vitimas",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
