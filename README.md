@@ -43,8 +43,8 @@ Criar um MVP que possa ingerir dados públicos de violência contra a mulher no 
 ### Conceito Lambda
 ![conceptual architecture](./images/conceptual_architecture.png)
 
-### O que é?
-A arquitetura lambda é um estilo de design de sistemas de processamento de dados que visa proporcionar uma solução robusta e eficiente para processar grandes volumes de dados em tempo real e em lote.
+### O que é a arquitetura Lambda?
+É um estilo de design de sistemas de processamento de dados que visa proporcionar uma solução robusta e eficiente para processar grandes volumes de dados em tempo real e em lote.
 
 Ela foi criada para lidar com os desafios de Big Data e combina duas camadas principais de processamento: a `batch layer` e a `speed layer`. Além disso, há a serving layer que une os resultados dessas duas camadas para fornecer respostas rápidas às consultas.
 
