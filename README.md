@@ -2,12 +2,12 @@
 
 ### Integrantes
 
-|Nome                       |                          
-|---------------------------|
-|Henrique Guilherme         |
-|Mônica Dyna                |
-|Renato Mori                |
-|Vinícius Soares            |
+|Nome                          |                          
+|---------------------------   |
+|Henrique Guilherme - 10444658 |
+|Mônica Dyna - 10444608        |
+|Renato Mori - 10444622        |
+|Vinícius Soares - 10444899    |
 
 # Visão Geral
 
