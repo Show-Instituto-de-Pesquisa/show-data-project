@@ -4,10 +4,14 @@
 
 |Nome                          |                          
 |---------------------------   |
-|Henrique Guilherme - 10444658 |
-|Mônica Dyna - 10444608        |
-|Renato Mori - 10444622        |
-|Vinícius Soares - 10444899    |
+|Henrique Guilherme            |
+|RA: 10444658                  |
+|Mônica Dyna                   |
+|RA: 10444608                  |
+|Renato Mori                   |
+|RA: 10444622                  |
+|Vinícius Soares               |
+|RA: 10444899                  |
 
 # Visão Geral
 
