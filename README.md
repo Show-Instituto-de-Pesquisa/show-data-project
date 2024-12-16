@@ -51,7 +51,7 @@ Ela foi criada para lidar com os desafios de Big Data e combina duas camadas pri
 ---
 
 ### `Batch layer`
-A batch layer é uma dos componantes de uma arquitetura lambda, usada para processar grandes volumes de dados em intervalos regulares, realizando processamento em lote para gerar visões completas e precisas dos dados ao longo do tempo.
+A batch layer é um dos componentes de uma arquitetura lambda, usada para processar grandes volumes de dados em intervalos regulares, realizando processamento em lote para gerar visões completas e precisas dos dados ao longo do tempo.
 
 - Vantagens
 
@@ -81,7 +81,7 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
 
     - Escalabilidade: Pode enfrentar desafios de escalabilidade dependendo do volume de dados e da carga de trabalho.
 
-    - Custo
+    - Custo: Se não for bem implementada, a arquitetura Lambda pode introduzir latências indesejadas em alguns casos de uso, o que pode não ser aceitável para certos negócios e pode requerer investimentos adicionais para otimização.
 
 ---
 
