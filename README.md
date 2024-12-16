@@ -155,3 +155,12 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
 ## Calculadora de custos
 
 ## Insights e conclusão
+<!-- 
+    Insights de dados
+
+    Conclusão sobre o projeto visão técnica e de negócios
+    Mencionar  Machine Learning e PowerBI
+    Falar sobre arquitetura e custos
+    Dificuldades e lessons learned
+    Possibilidades de melhoria pro futuro
+ -->
