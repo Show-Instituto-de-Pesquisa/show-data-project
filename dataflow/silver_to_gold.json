@@ -12,8 +12,20 @@
 					"name": "srcsilver"
 				}
 			],
-			"sinks": [],
-			"transformations": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Parquet1",
+						"type": "DatasetReference"
+					},
+					"name": "srcgold"
+				}
+			],
+			"transformations": [
+				{
+					"name": "aggmunicipio"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          mycols as string,",
@@ -32,7 +44,17 @@
 				"     validateSchema: false,",
 				"     inferDriftedColumnTypes: true,",
 				"     ignoreNoFilesFound: false,",
-				"     format: 'parquet') ~> srcsilver"
+				"     format: 'parquet') ~> srcsilver",
+				"srcsilver aggregate(groupBy(municipio_fato),",
+				"     municipio_cod = count(1)) ~> aggmunicipio",
+				"aggmunicipio sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> srcgold"
 			]
 		}
 	}
