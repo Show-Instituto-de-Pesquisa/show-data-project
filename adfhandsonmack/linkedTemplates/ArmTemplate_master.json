@@ -31,6 +31,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'Parquet'"
 		},
+		"teste_parquet_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'teste_parquet'"
+		},
 		"AzureDataLake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://stghandsonmack.dfs.core.windows.net/"
@@ -91,6 +95,9 @@
 					},
 					"Parquet_accountKey": {
 						"value": "[parameters('Parquet_accountKey')]"
+					},
+					"teste_parquet_connectionString": {
+						"value": "[parameters('teste_parquet_connectionString')]"
 					},
 					"AzureDataLake_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLake_properties_typeProperties_url')]"

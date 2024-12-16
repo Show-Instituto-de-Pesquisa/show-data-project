@@ -31,6 +31,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'Parquet'"
 		},
+		"teste_parquet_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'teste_parquet'"
+		},
 		"AzureDataLake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://stghandsonmack.dfs.core.windows.net/"
@@ -304,7 +308,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileSystem": "silver"
+						"fileSystem": "gold"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -385,6 +389,75 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/Fonte_dados')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/teste_henrique')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Parquet",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "silver"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "mycols",
+						"type": "UTF8"
+					},
+					{
+						"name": "municipio_cod",
+						"type": "UTF8"
+					},
+					{
+						"name": "municipio_fato",
+						"type": "UTF8"
+					},
+					{
+						"name": "data_fato",
+						"type": "UTF8"
+					},
+					{
+						"name": "mes",
+						"type": "INT32"
+					},
+					{
+						"name": "ano",
+						"type": "INT32"
+					},
+					{
+						"name": "risp",
+						"type": "UTF8"
+					},
+					{
+						"name": "rmbh",
+						"type": "UTF8"
+					},
+					{
+						"name": "natureza_delito",
+						"type": "UTF8"
+					},
+					{
+						"name": "tentado_consumado",
+						"type": "UTF8"
+					},
+					{
+						"name": "qtde_vitimas",
+						"type": "INT32"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Parquet')]"
 			]
 		},
 		{
@@ -482,6 +555,19 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/teste_parquet')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('teste_parquet_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/bronze_to_silver')]",
 			"type": "Microsoft.DataFactory/factories/dataflows",
 			"apiVersion": "2018-06-01",
@@ -518,7 +604,7 @@
 						"source(output(",
 						"          municipio_cod as string,",
 						"          municipio_fato as string,",
-						"          data_fato as date,",
+						"          data_fato as string,",
 						"          mes as integer,",
 						"          ano as integer,",
 						"          risp as string,",
@@ -551,16 +637,71 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
+			"name": "[concat(parameters('factoryName'), '/silver_to_gold')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"annotations": []
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "teste_henrique",
+								"type": "DatasetReference"
+							},
+							"name": "srcsilver"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "Parquet1",
+								"type": "DatasetReference"
+							},
+							"name": "srcgold"
+						}
+					],
+					"transformations": [
+						{
+							"name": "aggmunicipio"
+						}
+					],
+					"scriptLines": [
+						"source(output(",
+						"          mycols as string,",
+						"          municipio_cod as string,",
+						"          municipio_fato as string,",
+						"          data_fato as string,",
+						"          mes as integer,",
+						"          ano as integer,",
+						"          risp as string,",
+						"          rmbh as string,",
+						"          natureza_delito as string,",
+						"          tentado_consumado as string,",
+						"          qtde_vitimas as integer",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     inferDriftedColumnTypes: true,",
+						"     ignoreNoFilesFound: false,",
+						"     format: 'parquet') ~> srcsilver",
+						"srcsilver aggregate(groupBy(municipio_fato),",
+						"     municipio_cod = count(1)) ~> aggmunicipio",
+						"aggmunicipio sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     format: 'parquet',",
+						"     umask: 0022,",
+						"     preCommands: [],",
+						"     postCommands: [],",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true) ~> srcgold"
+					]
+				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/teste_henrique')]",
+				"[concat(variables('factoryId'), '/datasets/Parquet1')]"
+			]
 		}
 	]
 }

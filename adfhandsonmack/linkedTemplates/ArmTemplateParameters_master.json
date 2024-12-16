@@ -23,6 +23,9 @@
 		"Parquet_accountKey": {
 			"value": ""
 		},
+		"teste_parquet_connectionString": {
+			"value": ""
+		},
 		"AzureDataLake_properties_typeProperties_url": {
 			"value": "https://stghandsonmack.dfs.core.windows.net/"
 		},
