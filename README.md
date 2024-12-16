@@ -91,6 +91,15 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
 
 ---
 
+### Pipeline e tratamento de dados
+
+![Azure Data Factory Pipeline](./images/adf_pipeline.png)
+
+![Dataflow bronze para silver](./images/data_flow_bronze_to_silver.png)
+
+![Dataflow silver para gold](./images/data_flow_silver_to_gold.png)
+
+---
 
 <img src="./images/event-hubs.png" alt="drawing" width="40"/>
 
