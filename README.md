@@ -151,3 +151,7 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
 <img src="./images/azure-monitor.jpg" alt="drawing" width="40"/>
 
 **Azure Monitor** : Solução de monitoramento que coleta, analisa e responde a dados de monitoramento de ambientes de nuvem e locais. Ajuda a maximizar a disponibilidade e o desempenho dos aplicativos e serviços.
+
+## Calculadora de custos
+
+## Insights e conclusão
