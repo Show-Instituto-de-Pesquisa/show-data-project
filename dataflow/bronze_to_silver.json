@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "DestinationDataset_zwr",
+						"referenceName": "Parquet1",
 						"type": "DatasetReference"
 					},
 					"name": "tosilver"
@@ -51,6 +51,7 @@
 				"     disjoint: false) ~> LookForNULLs@(hasNULLs, noNULLs)",
 				"LookForNULLs@noNULLs sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     format: 'parquet',",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
