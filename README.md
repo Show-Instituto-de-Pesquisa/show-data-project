@@ -2,16 +2,12 @@
 
 ### Integrantes
 
-|Nome                          |                          
-|---------------------------   |
-|Henrique Guilherme            |
-|RA: 10444658                  |
-|Mônica Dyna                   |
-|RA: 10444608                  |
-|Renato Mori                   |
-|RA: 10444622                  |
-|Vinícius Soares               |
-|RA: 10444899                  |
+|Nome                              |                          
+|---------------------------       |
+|Henrique Guilherme - RA: 10444658 |
+|Mônica Dyna - RA: 10444608        |
+|Renato Mori - RA: 10444622        |
+|Vinícius Soares - RA: 10444899    |
 
 # Visão Geral
 
