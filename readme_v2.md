@@ -124,7 +124,13 @@ A solução utiliza a stack Azure para garantir escalabilidade, desempenho e seg
 
 ### Dados Agregados:
 
-![Dados agregados por cidade](./images/aggregate_data.png)
+#### Cidade
+
+![Dados agregados por cidade](./images/aggregate_municipio.png)
+
+#### Natureza do Delito
+
+![Dados agregados por Natureza do delito](./images/aggregate_natureza_delito.png)
 
 # Benefícios da Arquitetura Implementada
 
