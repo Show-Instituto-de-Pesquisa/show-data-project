@@ -205,5 +205,4 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
 Fazer o projeto em uma única storage
 Colocar um iceberg
 Colocar um delta
-
  -->
