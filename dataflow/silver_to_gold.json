@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "teste_henrique",
+						"referenceName": "Parquet1",
 						"type": "DatasetReference"
 					},
 					"name": "srcsilver"
@@ -37,20 +37,7 @@
 				}
 			],
 			"scriptLines": [
-				"source(output(",
-				"          mycols as string,",
-				"          municipio_cod as string,",
-				"          municipio_fato as string,",
-				"          data_fato as string,",
-				"          mes as integer,",
-				"          ano as integer,",
-				"          risp as string,",
-				"          rmbh as string,",
-				"          natureza_delito as string,",
-				"          tentado_consumado as string,",
-				"          qtde_vitimas as integer",
-				"     ),",
-				"     allowSchemaDrift: true,",
+				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     inferDriftedColumnTypes: true,",
 				"     ignoreNoFilesFound: false,",
