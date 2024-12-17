@@ -17,7 +17,52 @@
 			},
 			"compressionCodec": "snappy"
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "mycols",
+				"type": "UTF8"
+			},
+			{
+				"name": "municipio_cod",
+				"type": "UTF8"
+			},
+			{
+				"name": "municipio_fato",
+				"type": "UTF8"
+			},
+			{
+				"name": "data_fato",
+				"type": "UTF8"
+			},
+			{
+				"name": "mes",
+				"type": "INT32"
+			},
+			{
+				"name": "ano",
+				"type": "INT32"
+			},
+			{
+				"name": "risp",
+				"type": "UTF8"
+			},
+			{
+				"name": "rmbh",
+				"type": "UTF8"
+			},
+			{
+				"name": "natureza_delito",
+				"type": "UTF8"
+			},
+			{
+				"name": "tentado_consumado",
+				"type": "UTF8"
+			},
+			{
+				"name": "qtde_vitimas",
+				"type": "INT32"
+			}
+		]
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
