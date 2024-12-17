@@ -10,13 +10,6 @@
 						"type": "DatasetReference"
 					},
 					"name": "srcsilver"
-				},
-				{
-					"dataset": {
-						"referenceName": "silver_parquet",
-						"type": "DatasetReference"
-					},
-					"name": "source1"
 				}
 			],
 			"sinks": [
@@ -41,9 +34,6 @@
 				},
 				{
 					"name": "aggnaturezadelito"
-				},
-				{
-					"name": "aggregate1"
 				}
 			],
 			"scriptLines": [
@@ -65,28 +55,10 @@
 				"     inferDriftedColumnTypes: true,",
 				"     ignoreNoFilesFound: false,",
 				"     format: 'parquet') ~> srcsilver",
-				"source(output(",
-				"          mycols as string,",
-				"          municipio_cod as string,",
-				"          municipio_fato as string,",
-				"          data_fato as string,",
-				"          mes as integer,",
-				"          ano as integer,",
-				"          risp as string,",
-				"          rmbh as string,",
-				"          natureza_delito as string,",
-				"          tentado_consumado as string,",
-				"          qtde_vitimas as integer",
-				"     ),",
-				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     inferDriftedColumnTypes: true,",
-				"     ignoreNoFilesFound: false,",
-				"     format: 'parquet') ~> source1",
-				"srcsilver aggregate(quantidade_total = count(1)) ~> aggmunicipio",
+				"srcsilver aggregate(groupBy(municipio_fato),",
+				"     quantidade_total = count(1)) ~> aggmunicipio",
 				"srcsilver aggregate(groupBy(natureza_delito),",
 				"     quantidade_total = count(1)) ~> aggnaturezadelito",
-				"source1 aggregate() ~> aggregate1",
 				"aggmunicipio sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
