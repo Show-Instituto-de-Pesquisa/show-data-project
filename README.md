@@ -166,43 +166,46 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
 
 ## Insights e conclusão
 
-   ### Insights
-   **Distribuição Geográfica da Violência**
+### Insights
+**Distribuição Geográfica da Violência**
 
-    Belo Horizonte tem o maior número de registros (42), mostrando ser o município com mais ocorrências.
-    Juiz de Fora (19), Montes Claros (18) e Teófilo Otoni (16) também têm números significativos, indicando concentração de violência em centros urbanos.
-    Municípios menores como Patos de Minas (10) e Manhuaçu (11) ainda mostram números expressivos, sugerindo que a violência não está restrita às capitais. 
-    
+- Belo Horizonte tem o maior número de registros (42), mostrando ser o município com mais ocorrências.
+- Juiz de Fora (19), Montes Claros (18) e Teófilo Otoni (16) também têm números significativos, indicando concentração de violência em centros urbanos.
+- Municípios menores como Patos de Minas (10) e Manhuaçu (11) ainda mostram números expressivos, sugerindo que a violência não está restrita às capitais. 
+
+
 **Natureza dos Delitos**
 
-Ameaça é o delito mais comum, com 311 casos, mostrando predominância da violência psicológica/intimidatória.
-Vias de fato/agressão (243 casos) e lesão corporal (165 casos) são frequentes, revelando alta prevalência de violência física.
-Dano (26 casos) e outras infrações (28 casos) têm valores menores, mas contribuem para o quadro geral da violência.
-Atrito verbal e descumprimento (16-18 casos) sugerem conflitos verbais ou desobediência a ordens legais, como medidas protetivas.
+- Ameaça é o delito mais comum, com 311 casos, mostrando predominância da violência psicológica/intimidatória.
+- Vias de fato/agressão (243 casos) e lesão corporal (165 casos) são frequentes, revelando alta prevalência de violência física.
+- Dano (26 casos) e outras infrações (28 casos) têm valores menores, mas contribuem para o quadro geral da violência.
+- Atrito verbal e descumprimento (16-18 casos) sugerem conflitos verbais ou desobediência a ordens legais, como medidas protetivas.
 
  **Correlação Possível**
 
-Municípios mais populosos, como Belo Horizonte, tendem a ter mais casos de violência.
-A predominância de ameaças e agressões pode indicar que a violência contra a mulher frequentemente começa com intimidações verbais e escala para agressões físicas.
+- Municípios mais populosos, como Belo Horizonte, tendem a ter mais casos de violência.
+- A predominância de ameaças e agressões pode indicar que a violência contra a mulher frequentemente começa com intimidações verbais e escala para agressões físicas.
 
 ## Conclusões
   
 **Foco em Prevenção e Políticas Públicas**
-    Intensificar políticas públicas em municípios como Belo Horizonte, Juiz de Fora e Montes Claros, que têm altos registros.
-    Implementar programas de conscientização e campanhas de educação sobre violência doméstica, focando em ameaças e agressões físicas.
+- Intensificar políticas públicas em municípios como Belo Horizonte, Juiz de Fora e Montes Claros, que têm altos registros.
+- Implementar programas de conscientização e campanhas de educação sobre violência doméstica, focando em ameaças e agressões físicas.
     
 **Atenção às Naturezas de Delito**
-Delitos como ameaça e lesão corporal requerem maior vigilância e punições mais eficazes para reduzir a reincidência.
-Criar sistemas de denúncia mais rápidos e acessíveis para mitigar ameaças antes que evoluam para agressões físicas mais graves.
+- Delitos como ameaça e lesão corporal requerem maior vigilância e punições mais eficazes para reduzir a reincidência.
+- Criar sistemas de denúncia mais rápidos e acessíveis para mitigar ameaças antes que evoluam para agressões físicas mais graves.
     
 ### Conclusões Técnicas
   
 **Uso de Dados para Monitoramento Contínuo**
-A camada Gold pode gerar dashboards que correlacionam as informações geográficas com os tipos de delitos, permitindo identificar padrões sazonais, locais críticos e tipos de agressões predominantes.
-Insights adicionais podem ser gerados através do machine learning com dados complementares, como idade das vítimas, reincidência dos agressores e eficiência das medidas protetivas.
+- A camada Gold pode gerar dashboards que correlacionam as informações geográficas com os tipos de delitos, permitindo identificar padrões sazonais, locais críticos e tipos de agressões predominantes.
+- Insights adicionais podem ser gerados através do machine learning com dados complementares, como idade das vítimas, reincidência dos agressores e eficiência das medidas protetivas.
 
-### Dificuldades e lições aprendidas
-Fazer o projeto em uma única storage
-Colocar um iceberg
-Colocar um delta
- 
+### Dificuldades, lições aprendidas e melhorias
+
+- Criação de Storage Accounts para cada camada (bronze, silver e gold) de forma a manter um insolamento melhor dos dados e facilitar o gerenciamento de acessos e permissões.
+- Adicionar uma camada Delta ou Iceberg em cima dos arquivos .parquet para garantir ACID.
+- Realizar um fine tuning das configurações dos recursos utilizados a fim de melhorar o gerenciamento de custos.
+- Dificuldades de horário e organização entre membros para realização de reuniões.
+- Dificuldades sobre permissões e acessos da Azure.
