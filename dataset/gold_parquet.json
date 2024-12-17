@@ -2,7 +2,7 @@
 	"name": "gold_parquet",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage1",
+			"referenceName": "gold_parquet",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
