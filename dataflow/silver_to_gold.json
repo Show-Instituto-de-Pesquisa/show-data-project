@@ -18,7 +18,14 @@
 						"referenceName": "Parquet1",
 						"type": "DatasetReference"
 					},
-					"name": "srcgold"
+					"name": "toGoldAggMunicipio"
+				},
+				{
+					"dataset": {
+						"referenceName": "Parquet1",
+						"type": "DatasetReference"
+					},
+					"name": "toGoldAggDelito"
 				}
 			],
 			"transformations": [
@@ -52,6 +59,14 @@
 				"     quantidade_total = count(1)) ~> aggmunicipio",
 				"srcsilver aggregate(groupBy(natureza_delito),",
 				"     quantidade_total = count(1)) ~> aggnaturezadelito",
+				"aggmunicipio sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> toGoldAggMunicipio",
 				"aggnaturezadelito sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'parquet',",
@@ -59,7 +74,7 @@
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> srcgold"
+				"     skipDuplicateMapOutputs: true) ~> toGoldAggDelito"
 			]
 		}
 	}
