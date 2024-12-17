@@ -171,21 +171,21 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
 
     Belo Horizonte tem o maior número de registros (42), mostrando ser o município com mais ocorrências.
     Juiz de Fora (19), Montes Claros (18) e Teófilo Otoni (16) também têm números significativos, indicando concentração de violência em centros urbanos.
-    Municípios menores como Patos de Minas (10) e Manhuaçu (11) ainda mostram números expressivos, sugerindo que a violência não está restrita às capitais.
+    Municípios menores como Patos de Minas (10) e Manhuaçu (11) ainda mostram números expressivos, sugerindo que a violência não está restrita às capitais. 
+    
+**Natureza dos Delitos**
 
-    **Natureza dos Delitos**
+Ameaça é o delito mais comum, com 311 casos, mostrando predominância da violência psicológica/intimidatória.
+Vias de fato/agressão (243 casos) e lesão corporal (165 casos) são frequentes, revelando alta prevalência de violência física.
+Dano (26 casos) e outras infrações (28 casos) têm valores menores, mas contribuem para o quadro geral da violência.
+Atrito verbal e descumprimento (16-18 casos) sugerem conflitos verbais ou desobediência a ordens legais, como medidas protetivas.
 
-    Ameaça é o delito mais comum, com 311 casos, mostrando predominância da violência psicológica/intimidatória.
-    Vias de fato/agressão (243 casos) e lesão corporal (165 casos) são frequentes, revelando alta prevalência de violência física.
-    Dano (26 casos) e outras infrações (28 casos) têm valores menores, mas contribuem para o quadro geral da violência.
-    Atrito verbal e descumprimento (16-18 casos) sugerem conflitos verbais ou desobediência a ordens legais, como medidas protetivas.
+ **Correlação Possível**
 
-    **Correlação Possível**
+Municípios mais populosos, como Belo Horizonte, tendem a ter mais casos de violência.
+A predominância de ameaças e agressões pode indicar que a violência contra a mulher frequentemente começa com intimidações verbais e escala para agressões físicas.
 
-    Municípios mais populosos, como Belo Horizonte, tendem a ter mais casos de violência.
-    A predominância de ameaças e agressões pode indicar que a violência contra a mulher frequentemente começa com intimidações verbais e escala para agressões físicas.
-
-### Conclusões
+##Conclusões
   
     **Foco em Prevenção e Políticas Públicas**
      Intensificar políticas públicas em municípios como Belo Horizonte, Juiz de Fora e Montes Claros, que têm altos registros.
@@ -205,5 +205,9 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
 Fazer o projeto em uma única storage
 Colocar um iceberg
 Colocar um delta
+<<<<<<< HEAD
 
 
+=======
+ -->
+>>>>>>> 2cafc527021d0c4132a71e622c56d8b8d9d10831
