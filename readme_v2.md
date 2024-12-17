@@ -13,6 +13,8 @@
 ### Show Data Project
 A violência contra a mulher é um problema grave que afeta diretamente a saúde, segurança e direitos das mulheres. Analisando os dados de violência ao longo dos anos, podemos identificar tendências, padrões e áreas de maior risco, o que é fundamental para desenvolver políticas públicas eficazes e campanhas de conscientização.
 
+O dataset utilizado para este trabalho foi extraído do site do Governo Federal brasileiro contendo o histórico dos últimos 10 anos (2014-2023) de incidentes de violência contra a mulher no Estado de Minas Gerais.
+
 ## Objetivo 
 
 - Desenvolver um MVP que:
