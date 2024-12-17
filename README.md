@@ -187,19 +187,19 @@ A predominância de ameaças e agressões pode indicar que a violência contra a
 
 ## Conclusões
   
-    **Foco em Prevenção e Políticas Públicas**
-     Intensificar políticas públicas em municípios como Belo Horizonte, Juiz de Fora e Montes Claros, que têm altos registros.
-     Implementar programas de conscientização e campanhas de educação sobre violência doméstica, focando em ameaças e agressões físicas.
-     
-    **Atenção às Naturezas de Delito**
-    Delitos como ameaça e lesão corporal requerem maior vigilância e punições mais eficazes para reduzir a reincidência.
-    Criar sistemas de denúncia mais rápidos e acessíveis para mitigar ameaças antes que evoluam para agressões físicas mais graves.
+**Foco em Prevenção e Políticas Públicas**
+    Intensificar políticas públicas em municípios como Belo Horizonte, Juiz de Fora e Montes Claros, que têm altos registros.
+    Implementar programas de conscientização e campanhas de educação sobre violência doméstica, focando em ameaças e agressões físicas.
+    
+**Atenção às Naturezas de Delito**
+Delitos como ameaça e lesão corporal requerem maior vigilância e punições mais eficazes para reduzir a reincidência.
+Criar sistemas de denúncia mais rápidos e acessíveis para mitigar ameaças antes que evoluam para agressões físicas mais graves.
     
 ### Conclusões Técnicas
   
-    **Uso de Dados para Monitoramento Contínuo**
-    A camada Gold pode gerar dashboards que correlacionam as informações geográficas com os tipos de delitos, permitindo identificar padrões sazonais, locais críticos e tipos de agressões predominantes.
-    Insights adicionais podem ser gerados através do machine learning com dados complementares, como idade das vítimas, reincidência dos agressores e eficiência das medidas protetivas.
+**Uso de Dados para Monitoramento Contínuo**
+A camada Gold pode gerar dashboards que correlacionam as informações geográficas com os tipos de delitos, permitindo identificar padrões sazonais, locais críticos e tipos de agressões predominantes.
+Insights adicionais podem ser gerados através do machine learning com dados complementares, como idade das vítimas, reincidência dos agressores e eficiência das medidas protetivas.
 
 ### Dificuldades e lições aprendidas
 Fazer o projeto em uma única storage
