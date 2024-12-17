@@ -24,6 +24,9 @@
 			"transformations": [
 				{
 					"name": "aggmunicipio"
+				},
+				{
+					"name": "aggnaturezadelito"
 				}
 			],
 			"scriptLines": [
@@ -46,8 +49,10 @@
 				"     ignoreNoFilesFound: false,",
 				"     format: 'parquet') ~> srcsilver",
 				"srcsilver aggregate(groupBy(municipio_fato),",
-				"     municipio_cod = count(1)) ~> aggmunicipio",
-				"aggmunicipio sink(allowSchemaDrift: true,",
+				"     quantidade_total = count(1)) ~> aggmunicipio",
+				"srcsilver aggregate(groupBy(natureza_delito),",
+				"     quantidade_total = count(1)) ~> aggnaturezadelito",
+				"aggnaturezadelito sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'parquet',",
 				"     umask: 0022,",
