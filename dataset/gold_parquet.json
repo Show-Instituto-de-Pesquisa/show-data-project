@@ -1,0 +1,31 @@
+{
+	"name": "gold_parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Gold"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "gold"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "municipio_fato",
+				"type": "UTF8"
+			},
+			{
+				"name": "municipio_cod",
+				"type": "INT64"
+			}
+		]
+	}
+}
