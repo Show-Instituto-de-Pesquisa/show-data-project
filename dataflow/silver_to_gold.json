@@ -15,14 +15,14 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "silver_parquet",
+						"referenceName": "gold_parquet",
 						"type": "DatasetReference"
 					},
 					"name": "toGoldAggMunicipio"
 				},
 				{
 					"dataset": {
-						"referenceName": "silver_parquet",
+						"referenceName": "gold_parquet",
 						"type": "DatasetReference"
 					},
 					"name": "toGoldAggDelito"
@@ -48,20 +48,26 @@
 				"     quantidade_total = count(1)) ~> aggnaturezadelito",
 				"aggmunicipio sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          municipio_fato as string,",
+				"          municipio_cod as long",
+				"     ),",
 				"     format: 'parquet',",
-				"     umask: 0022,",
-				"     preCommands: [],",
-				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> toGoldAggMunicipio",
+				"     skipDuplicateMapOutputs: true,",
+				"     preCommands: [],",
+				"     postCommands: []) ~> toGoldAggMunicipio",
 				"aggnaturezadelito sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          municipio_fato as string,",
+				"          municipio_cod as long",
+				"     ),",
 				"     format: 'parquet',",
-				"     umask: 0022,",
-				"     preCommands: [],",
-				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> toGoldAggDelito"
+				"     skipDuplicateMapOutputs: true,",
+				"     preCommands: [],",
+				"     postCommands: []) ~> toGoldAggDelito"
 			]
 		}
 	}
