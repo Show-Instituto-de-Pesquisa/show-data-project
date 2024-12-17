@@ -208,4 +208,4 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
 - Adicionar uma camada Delta ou Iceberg em cima dos arquivos .parquet para garantir ACID.
 - Realizar um fine tuning das configurações dos recursos utilizados a fim de melhorar o gerenciamento de custos.
 - Dificuldades de horário e organização entre membros para realização de reuniões.
-- Dificuldades sobre permissões e acessos da Azure.
+- Dificuldades sobre permissões e acessos da Azure não concedidos em tempo hábil.
