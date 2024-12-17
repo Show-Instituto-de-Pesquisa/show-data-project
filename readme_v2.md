@@ -228,7 +228,7 @@ Custo Total Mensal:
 - A camada Gold pode gerar dashboards que correlacionam as informações geográficas com os tipos de delitos, permitindo identificar padrões sazonais, locais críticos e tipos de agressões predominantes.
 - Insights adicionais podem ser gerados com dados complementares através de machine learning, como idade das vítimas, reincidência dos agressores e eficiência das medidas protetivas.
 
-### Dificuldades, lições aprendidas e melhorias
+## Dificuldades, lições aprendidas e melhorias
 
 - Criação de Storage Accounts para cada camada (bronze, silver e gold) de forma a manter um insolamento melhor dos dados e facilitar o gerenciamento de acessos e permissões.
 - Adicionar uma camada Delta ou Iceberg em cima dos arquivos .parquet para garantir ACID.
