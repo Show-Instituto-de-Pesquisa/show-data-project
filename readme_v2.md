@@ -226,7 +226,7 @@ Custo Total Mensal:
   
 **Uso de Dados para Monitoramento Contínuo**
 - A camada Gold pode gerar dashboards que correlacionam as informações geográficas com os tipos de delitos, permitindo identificar padrões sazonais, locais críticos e tipos de agressões predominantes.
-- Insights adicionais podem ser gerados através do machine learning com dados complementares, como idade das vítimas, reincidência dos agressores e eficiência das medidas protetivas.
+- Insights adicionais podem ser gerados com dados complementares através de machine learning, como idade das vítimas, reincidência dos agressores e eficiência das medidas protetivas.
 
 ### Dificuldades, lições aprendidas e melhorias
 
