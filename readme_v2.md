@@ -145,11 +145,11 @@ A solução utiliza a stack Azure para garantir escalabilidade, desempenho e seg
 5. `Custo Controlado`: Otimização com Azure Cost Management.
 6. `Monitoramento Contínuo`: Garantido pelo Azure Monitor.
 
-# Desvantagens Possíveis
+# Possíveis desvantagens
 
-1. `Complexidade de Implementação: Requer configuração e gerenciamento cuidadosos para garantir desempenho e confiabilidade.
-2. `Escalabilidade: Pode enfrentar desafios de escalabilidade dependendo do volume de dados e da carga de trabalho.
-3. `Custo: Se não for bem implementada, a arquitetura Lambda pode introduzir latências indesejadas em alguns casos de uso, o que pode não ser aceitável para certos negócios e pode requerer investimentos adicionais para otimização.
+1. `Complexidade de Implementação`: Requer configuração e gerenciamento cuidadosos para garantir desempenho e confiabilidade.
+2. `Escalabilidade`: Pode enfrentar desafios de escalabilidade dependendo do volume de dados e da carga de trabalho.
+3. `Custo`: Se não for bem implementada, a arquitetura Lambda pode introduzir latências indesejadas em alguns casos de uso, o que pode não ser aceitável para certos negócios e pode requerer investimentos adicionais para otimização.
 
 
 # Calculadora de Custos
