@@ -2,7 +2,7 @@
 	"name": "silver_parquet",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorage1",
+			"referenceName": "Parquet",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
