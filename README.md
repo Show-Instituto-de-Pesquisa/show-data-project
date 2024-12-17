@@ -185,7 +185,7 @@ Atrito verbal e descumprimento (16-18 casos) sugerem conflitos verbais ou desobe
 Municípios mais populosos, como Belo Horizonte, tendem a ter mais casos de violência.
 A predominância de ameaças e agressões pode indicar que a violência contra a mulher frequentemente começa com intimidações verbais e escala para agressões físicas.
 
-##Conclusões
+## Conclusões
   
     **Foco em Prevenção e Políticas Públicas**
      Intensificar políticas públicas em municípios como Belo Horizonte, Juiz de Fora e Montes Claros, que têm altos registros.
@@ -195,7 +195,7 @@ A predominância de ameaças e agressões pode indicar que a violência contra a
     Delitos como ameaça e lesão corporal requerem maior vigilância e punições mais eficazes para reduzir a reincidência.
     Criar sistemas de denúncia mais rápidos e acessíveis para mitigar ameaças antes que evoluam para agressões físicas mais graves.
     
-    ### Conclusões Técnicas
+### Conclusões Técnicas
   
     **Uso de Dados para Monitoramento Contínuo**
     A camada Gold pode gerar dashboards que correlacionam as informações geográficas com os tipos de delitos, permitindo identificar padrões sazonais, locais críticos e tipos de agressões predominantes.
@@ -205,9 +205,4 @@ A predominância de ameaças e agressões pode indicar que a violência contra a
 Fazer o projeto em uma única storage
 Colocar um iceberg
 Colocar um delta
-<<<<<<< HEAD
-
-
-=======
- -->
->>>>>>> 2cafc527021d0c4132a71e622c56d8b8d9d10831
+ 
