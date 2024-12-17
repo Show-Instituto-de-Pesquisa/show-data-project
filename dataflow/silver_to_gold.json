@@ -10,6 +10,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "srcsilver"
+				},
+				{
+					"dataset": {
+						"referenceName": "silver_parquet",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
 				}
 			],
 			"sinks": [
@@ -42,8 +49,11 @@
 				"     inferDriftedColumnTypes: true,",
 				"     ignoreNoFilesFound: false,",
 				"     format: 'parquet') ~> srcsilver",
-				"srcsilver aggregate(groupBy(natureza_delito),",
-				"     quantidade_total = count(1)) ~> aggmunicipio",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> source1",
+				"srcsilver aggregate(quantidade_total = count(1)) ~> aggmunicipio",
 				"srcsilver aggregate(groupBy(natureza_delito),",
 				"     quantidade_total = count(1)) ~> aggnaturezadelito",
 				"aggmunicipio sink(allowSchemaDrift: true,",
