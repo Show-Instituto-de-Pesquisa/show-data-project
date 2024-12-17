@@ -7,18 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adfhandsonmack"
 		},
-		"AzureBlobStorage1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
-		},
-		"AzureDataLake_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLake'"
-		},
-		"AzureDataLakeStorage1_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
-		},
 		"Bronze_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'Bronze'"
@@ -31,17 +19,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'Parquet'"
 		},
-		"teste_parquet_connectionString": {
+		"gold_parquet_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'teste_parquet'"
-		},
-		"AzureDataLake_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://stghandsonmack.dfs.core.windows.net/"
-		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://stghandsonmack.dfs.core.windows.net/"
+			"metadata": "Secure string for 'connectionString' of 'gold_parquet'"
 		},
 		"Bronze_properties_typeProperties_url": {
 			"type": "string",
@@ -339,33 +319,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Parquet1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Silver"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileSystem": "gold"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/SourceDataset_zwr')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -439,13 +392,52 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/teste_henrique')]",
+			"name": "[concat(parameters('factoryName'), '/gold_parquet')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "gold_parquet",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Gold"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "gold"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "municipio_fato",
+						"type": "UTF8"
+					},
+					{
+						"name": "municipio_cod",
+						"type": "INT64"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/gold_parquet')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/silver_parquet')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "Parquet",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Silver"
 				},
 				"annotations": [],
 				"type": "Parquet",
@@ -508,53 +500,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureDataLake')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('AzureDataLake_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('AzureDataLake_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/Bronze')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -602,14 +547,14 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/teste_parquet')]",
+			"name": "[concat(parameters('factoryName'), '/gold_parquet')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
-					"connectionString": "[parameters('teste_parquet_connectionString')]"
+					"connectionString": "[parameters('gold_parquet_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -633,7 +578,7 @@
 					"sinks": [
 						{
 							"dataset": {
-								"referenceName": "Parquet1",
+								"referenceName": "silver_parquet",
 								"type": "DatasetReference"
 							},
 							"name": "tosilver"
@@ -669,6 +614,19 @@
 						"     disjoint: false) ~> LookForNULLs@(hasNULLs, noNULLs)",
 						"LookForNULLs@noNULLs sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
+						"     input(",
+						"          mycols as string,",
+						"          municipio_cod as string,",
+						"          municipio_fato as string,",
+						"          data_fato as string,",
+						"          mes as integer,",
+						"          ano as integer,",
+						"          risp as string,",
+						"          rmbh as string,",
+						"          natureza_delito as string,",
+						"          tentado_consumado as string,",
+						"          qtde_vitimas as integer",
+						"     ),",
 						"     format: 'parquet',",
 						"     umask: 0022,",
 						"     preCommands: [],",
@@ -680,7 +638,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/SourceDataset_zwr')]",
-				"[concat(variables('factoryId'), '/datasets/Parquet1')]"
+				"[concat(variables('factoryId'), '/datasets/silver_parquet')]"
 			]
 		},
 		{
@@ -693,7 +651,7 @@
 					"sources": [
 						{
 							"dataset": {
-								"referenceName": "teste_henrique",
+								"referenceName": "silver_parquet",
 								"type": "DatasetReference"
 							},
 							"name": "srcsilver"
@@ -702,14 +660,14 @@
 					"sinks": [
 						{
 							"dataset": {
-								"referenceName": "Parquet1",
+								"referenceName": "gold_parquet",
 								"type": "DatasetReference"
 							},
 							"name": "toGoldAggMunicipio"
 						},
 						{
 							"dataset": {
-								"referenceName": "Parquet1",
+								"referenceName": "gold_parquet",
 								"type": "DatasetReference"
 							},
 							"name": "toGoldAggDelito"
@@ -748,26 +706,32 @@
 						"     quantidade_total = count(1)) ~> aggnaturezadelito",
 						"aggmunicipio sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
+						"     input(",
+						"          municipio_fato as string,",
+						"          municipio_cod as long",
+						"     ),",
 						"     format: 'parquet',",
-						"     umask: 0022,",
-						"     preCommands: [],",
-						"     postCommands: [],",
 						"     skipDuplicateMapInputs: true,",
-						"     skipDuplicateMapOutputs: true) ~> toGoldAggMunicipio",
+						"     skipDuplicateMapOutputs: true,",
+						"     preCommands: [],",
+						"     postCommands: []) ~> toGoldAggMunicipio",
 						"aggnaturezadelito sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
+						"     input(",
+						"          municipio_fato as string,",
+						"          municipio_cod as long",
+						"     ),",
 						"     format: 'parquet',",
-						"     umask: 0022,",
-						"     preCommands: [],",
-						"     postCommands: [],",
 						"     skipDuplicateMapInputs: true,",
-						"     skipDuplicateMapOutputs: true) ~> toGoldAggDelito"
+						"     skipDuplicateMapOutputs: true,",
+						"     preCommands: [],",
+						"     postCommands: []) ~> toGoldAggDelito"
 					]
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/teste_henrique')]",
-				"[concat(variables('factoryId'), '/datasets/Parquet1')]"
+				"[concat(variables('factoryId'), '/datasets/silver_parquet')]",
+				"[concat(variables('factoryId'), '/datasets/gold_parquet')]"
 			]
 		}
 	]

@@ -5,15 +5,6 @@
 		"factoryName": {
 			"value": "adfhandsonmack"
 		},
-		"AzureBlobStorage1_connectionString": {
-			"value": ""
-		},
-		"AzureDataLake_accountKey": {
-			"value": ""
-		},
-		"AzureDataLakeStorage1_accountKey": {
-			"value": ""
-		},
 		"Bronze_accountKey": {
 			"value": ""
 		},
@@ -23,14 +14,8 @@
 		"Parquet_accountKey": {
 			"value": ""
 		},
-		"teste_parquet_connectionString": {
+		"gold_parquet_connectionString": {
 			"value": ""
-		},
-		"AzureDataLake_properties_typeProperties_url": {
-			"value": "https://stghandsonmack.dfs.core.windows.net/"
-		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"value": "https://stghandsonmack.dfs.core.windows.net/"
 		},
 		"Bronze_properties_typeProperties_url": {
 			"value": "https://stghandsonmack.dfs.core.windows.net/"

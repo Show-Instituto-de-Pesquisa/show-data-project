@@ -7,18 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adfhandsonmack"
 		},
-		"AzureBlobStorage1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
-		},
-		"AzureDataLake_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLake'"
-		},
-		"AzureDataLakeStorage1_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
-		},
 		"Bronze_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'Bronze'"
@@ -31,17 +19,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'Parquet'"
 		},
-		"teste_parquet_connectionString": {
+		"gold_parquet_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'teste_parquet'"
-		},
-		"AzureDataLake_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://stghandsonmack.dfs.core.windows.net/"
-		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://stghandsonmack.dfs.core.windows.net/"
+			"metadata": "Secure string for 'connectionString' of 'gold_parquet'"
 		},
 		"Bronze_properties_typeProperties_url": {
 			"type": "string",
@@ -78,15 +58,6 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"AzureBlobStorage1_connectionString": {
-						"value": "[parameters('AzureBlobStorage1_connectionString')]"
-					},
-					"AzureDataLake_accountKey": {
-						"value": "[parameters('AzureDataLake_accountKey')]"
-					},
-					"AzureDataLakeStorage1_accountKey": {
-						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
-					},
 					"Bronze_accountKey": {
 						"value": "[parameters('Bronze_accountKey')]"
 					},
@@ -96,14 +67,8 @@
 					"Parquet_accountKey": {
 						"value": "[parameters('Parquet_accountKey')]"
 					},
-					"teste_parquet_connectionString": {
-						"value": "[parameters('teste_parquet_connectionString')]"
-					},
-					"AzureDataLake_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLake_properties_typeProperties_url')]"
-					},
-					"AzureDataLakeStorage1_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					"gold_parquet_connectionString": {
+						"value": "[parameters('gold_parquet_connectionString')]"
 					},
 					"Bronze_properties_typeProperties_url": {
 						"value": "[parameters('Bronze_properties_typeProperties_url')]"
