@@ -99,7 +99,9 @@ A speed layer é uma parte crucial da arquitetura Lambda, projetada para process
 
 ![Dataflow silver para gold](./images/data_flow_silver_to_gold.png)
 
-![Dados agregados por cidade](./images/aggregate_data.png)
+![Dados agregados por cidade](./images/aggregate_municipio.png)
+
+![Dados agregados por tipo de delito](./images/aggregate_natureza_delito.png)
 
 ---
 
