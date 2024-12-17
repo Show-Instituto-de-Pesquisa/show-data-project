@@ -15,7 +15,7 @@
 A violência contra a mulher é um problema grave que afeta diretamente a saúde, segurança e direitos das mulheres. Analisando os dados de violência ao longo dos anos, podemos identificar tendências, padrões e áreas de maior risco, o que é fundamental para desenvolver políticas públicas eficazes e campanhas de conscientização.
 
 ### Objetivo 
-Criar um MVP que possa ingerir dados públicos de violência contra a mulher no Estado de Minas Gerais, processá-los através das camadas de dados Bronze, Silver e Gold usando o Azure Data Factory para transformar esses dados e gerar insights valiosos para a formulação de políticas públicas e dar visibilidade à violência contra a mulher mudou ao longo dos anos. 
+Criar um MVP que possa mostrar dados públicos de violência contra a mulher no Estado de Minas Gerais, processá-los através das camadas de dados Bronze, Silver e Gold usando o Azure Data Factory para transformar esses dados e gerar insights valiosos para a formulação de políticas públicas e dar visibilidade à violência contra a mulher mudou ao longo dos anos. 
 
 ## Atividades técnicas para o MVP
 
