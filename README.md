@@ -29,7 +29,7 @@ O dataset utilizado para este trabalho foi extraído do site do Governo Federal 
 ## Atividades técnicas para o MVP
 
 1. Verificação dos arquivos brutos
-2. Levantamento de requisitos
+2. Levantamento de requisitos técnicos
 3. Definição e desenho da arquitetura
 4. Preparação do ambiente
 5. Desenvolvimento
